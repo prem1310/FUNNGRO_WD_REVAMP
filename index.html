@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funngro - Teen Company</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Funngro Teen</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Discover the Fun Side of Teen Life</h2>
+            <p>Join us for exciting adventures, cool products, and endless fun!</p>
+            <a href="#" class="btn">Explore Now</a>
+        </div>
+    </section>
+
+	<div class="trail"></div>
+
+    <section class="features">
+        <h2>Our Awesome Features</h2>
+        <div class="feature">
+            <img src="temp.png" alt="Feature 1">
+            <h3>Interactive Games</h3>
+            <p>Play fun and challenging games with friends!</p>
+        </div>
+        <div class="feature">
+            <img src="temp.png" alt="Feature 2">
+            <h3>Creative DIYs</h3>
+            <p>Get inspired and create cool DIY projects!</p>
+        </div>
+        <div class="feature">
+            <img src="temp.png" alt="Feature 3">
+            <h3>Exclusive Events</h3>
+            <p>Attend our exclusive events and parties!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Funngro Teen. All rights reserved.</p>
+    </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const trail = document.querySelector('.trail');
+
+    // Function to update trail position
+    function updateTrail(event) {
+        trail.style.left = event.clientX + 'px';
+        trail.style.top = event.clientY + 'px';
+    }
+
+    // Function to change trail color
+    function changeColor() {
+        trail.style.backgroundColor = '#FF6910'; // New color for the trail on hover
+    }
+
+    // Add mousemove event listener to the document
+    document.addEventListener('mousemove', function (event) {
+        updateTrail(event);
+    });
+
+    // Add mouseenter and mouseleave event listeners to all div elements
+    const divs = document.querySelectorAll('div');
+    divs.forEach(div => {
+        div.addEventListener('mouseenter', function (event) {
+            updateTrail(event);
+            changeColor();
+        });
+        div.addEventListener('mouseleave', function () {
+            trail.style.backgroundColor = '#FFFFFF'; // Restore original color when leaving element
+        });
+    });
+});
+</script>
+</body>
+</html>
